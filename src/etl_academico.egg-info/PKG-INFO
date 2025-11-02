@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: etl-academico
+Version: 0.1.0
+Summary: ETL académico ligero con pandas, CLI y reportes.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# etl-academico-ligero
+
+Pipeline ETL mínimo para datos académicos con pandas y CLI basada en Typer.
+
+## Quickstart
+python -m venv .venv && source .venv/bin/activate # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python -m etl_academico.cli ingest --src data/input/ejemplo.csv --out data/output/bronze.parquet
+python -m etl_academico.cli clean --src data/output/bronze.parquet --out data/output/silver.parquet --metrics promedio,calificacion
+python -m etl_academico.cli report --src data/output/silver.parquet --out_dir data/output
+pytest -q
+
+## Estructura
+- src/etl_academico: transformaciones y CLI
+- data/input: dataset de ejemplo
+- data/output: resultados (parquet, gráficos y resumen)
+
+## Lo que demuestra
+- Limpieza y normalización de datos con pandas.
+- Detección de outliers (IQR) y generación de reportes básicos.
+- Interfaz de línea de comandos reproducible y pruebas automatizadas.

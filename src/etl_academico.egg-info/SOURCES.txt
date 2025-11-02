@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/etl_academico/cli.py
+src/etl_academico/init.py
+src/etl_academico/plot.py
+src/etl_academico/transform.py
+src/etl_academico.egg-info/PKG-INFO
+src/etl_academico.egg-info/SOURCES.txt
+src/etl_academico.egg-info/dependency_links.txt
+src/etl_academico.egg-info/top_level.txt
+tests/test_transform.py
